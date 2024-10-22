@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup  #html 해석기
 # Dom 구조화
 soup = BeautifulSoup(response.text, 'html.parser')
 
-titles = soup.select('span class="fds-comps-header-headline xWYCPbd1ikavaw8UZRF0"')
+titles = soup.select('span."fds-comps-header-headline xWYCPbd1ikavaw8UZRF0"')
 # len(titles)
 # 15
 # titles[10]
