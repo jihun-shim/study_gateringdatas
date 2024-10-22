@@ -1,7 +1,7 @@
 # - https://news.naver.com/section/101 있는 news 정보 수집
 # refer : https://news.naver.com/section/101
 # - 리스트에서 링크와 제목 가져오기
-# #newsct > div.section_latest > div > div.section_latest_article._CONTENT_LIST._PERSIST_META div.sa_text
+# ##newsct > div.section_latest > div > div.section_latest_article._CONTENT_LIST._PERSIST_META div.sa_text > a
 # - 기사내용 확인 uri
 # [href]
 # - 기사 내용 가져오기
