@@ -48,10 +48,10 @@ def main():
     client = MongoClient('mongodb://192.168.0.63:27017/')   
 
     # 'mydatabase' 데이터베이스 선택 (없으면 자동 생성)
-    db = client['newslist_jihunshim']
+    db = client['news_jihunshim']
 
     # 'users' 컬렉션 선택 (없으면 자동 생성)
-    collection = db['newslist_jihunshim']
+    collection = db['news_jihunshim']
 
     news_list=[]
     for title_link in titles_link:
