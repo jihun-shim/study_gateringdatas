@@ -41,7 +41,7 @@ def main():
     respone = requests.get(f'https://underkg.co.kr/news')
     soup = BeautifulSoup(respone.text, 'html.parser')
     titles_link = soup.select('#board_list h1 > a')
-    titles_date = soup.select('div.new_info > span.time')
+    titles_date = soup.select('span.time > span')
     titles_read_papers = soup.select('span.readNum > span')
     
     # MongoDB 서버에 연결 : Both connect in case local and remote
@@ -59,7 +59,7 @@ def main():
         news_content_url = title_link.attrs['href']
         print(f'news_content_url : {news_content_url}')
         news_date = titles_date
-        print(f'news_date : {news_date}')
+        print(f'news_date : {news_date.}')
         read_papers = titles_read_papers
         print(f'read_papers : {read_papers}')
         
