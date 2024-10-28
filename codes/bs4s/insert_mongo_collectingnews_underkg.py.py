@@ -41,8 +41,8 @@ def main():
     respone = requests.get(f'https://underkg.co.kr/news')
     soup = BeautifulSoup(respone.text, 'html.parser')
     titles_link = soup.select('#board_list h1 > a')
-    titles_date = soup.select('span.time > span')
-    titles_read_papers = soup.select('span.readNum > span')
+    titles_date = soup.select('#board_list span.time > span')
+    titles_read_papers = soup.select('#board_list span.readNum > span')
     
     # MongoDB 서버에 연결 : Both connect in case local and remote
     client = MongoClient('mongodb://192.168.0.63:27017/')   
