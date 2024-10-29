@@ -23,3 +23,18 @@ html = browser.page_source
 print(html)
 
 from selenium.webdriver.common.by import By
+element_value = f'body'
+element_body = browser.find_element(by=By.CSS_SELECTOR, value=element_value)
+
+from selenium.webdriver.common.keys import Keys
+
+import time
+element_body.send_keys(Keys.PAGE_DOWN)
+time.sleep(1)
+element_body.send_keys(Keys.PAGE_UP)
+time.sleep(1)
+element_body.send_keys(Keys.END)
+time.sleep(1)
+element_body.send_keys(Keys.HOME)
+time.sleep(1)
+pass

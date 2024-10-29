@@ -19,7 +19,7 @@ browser.get("https://underkg.co.kr/news")
 
 # - 몽고
 client = MongoClient('mongodb://192.168.0.63:27017/')   
-db = client['db_jihunshim']
+db = client['underkg_jihunshim']
 collection = db['underkg_jihunshim']
 
 # - 가능 여부에 대한 OK 받음
@@ -35,6 +35,7 @@ print(html)
 #board_list span.time > span : date 
 #board_list span.readNum > span : read_view
 
+underkg=[]
 from selenium.webdriver.common.by import By
 currency_list = browser.find_elements(by=By.CSS_SELECTOR, value = '#board_list > div > div' )
 
@@ -45,8 +46,16 @@ for index, element_bundle in enumerate(currency_list):
     date = element_bundle.find_element(By.CSS_SELECTOR,date_tag)
     read_view_tag=f'#board_list span.readNum > span'
     read_view = element_bundle.find_element(By.CSS_SELECTOR,read_view_tag)
-        
+            
     result = f'titles : {titles.text}, date : {date.text}, read_view : {read_view.text}'
     print(result)
 
-    pass
+    list={
+        'titles' : titles.text,
+        'date' : date.text,
+        'read_view' : read_view.text
+        }
+    underkg.append(list)
+
+result = collection.insert_many(underkg)
+pass
