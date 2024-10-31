@@ -43,8 +43,8 @@ element_body = browser.find_element(by=By.CSS_SELECTOR, value=element_value)
 from selenium.webdriver.common.keys import Keys
 import time
 
-scroll_count = 50
-for i in range(scroll_count):
+# scroll_count = 50
+for i in range(50):
     element_body.send_keys(Keys.PAGE_DOWN)    
     time.sleep(0.5)
 
