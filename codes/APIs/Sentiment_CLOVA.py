@@ -1,6 +1,5 @@
 import requests
 import json
-from pymongo import MongoClient
 
 def main():
     uri = f'https://naveropenapi.apigw.ntruss.com/sentiment-analysis/v1/analyze'
