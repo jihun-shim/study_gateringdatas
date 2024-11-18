@@ -17,7 +17,6 @@ def main():
     # - 주소 입력(https://www.w3schools.com)
     browser.get("https://www.courtauction.go.kr/")
     
-   
     return
 
 if __name__=='__main__':
